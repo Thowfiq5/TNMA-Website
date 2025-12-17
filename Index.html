@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TNMA - Thalainagaram Media and Advertisement</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <img src="logo.png" alt="TNMA Logo" class="loading-logo">
+            <h2>TNMA <br> Thalainagaram Media and Advertisement</h2>
+            <p>Loading News Feed...</p>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+            <div class="loading-percentage"><span id="loading-percent">0</span>%</div>
+        </div>
+    </div>
+
+    <header>
+        <!-- Replace 'logo.png' with your actual logo file name -->
+        <img src="logo.png" alt="TNMA Logo" class="logo">
+        <nav>
+            <a href="#" onclick="showSection('home')">Home</a>
+            <a href="#" onclick="showSection('about')">About Us</a>
+            <a href="#" onclick="showSection('services')">Services</a>
+            <a href="#" onclick="showSection('jobs')">Job Portal</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- Home Section -->
+        <section id="home" class="active">
+            <h1>Welcome to TNMA </h1>
+            <div class="quote-box">
+                <p>"Journalism is printing what someone else does not want printed: everything else is public relations."</p>
+                <div class="quote-author">- George Orwell</div>
+            </div>
+            <div class="quote-box">
+                <p>"The role of a journalist is to comfort the afflicted and afflict the comfortable."</p>
+                <div class="quote-author">- Finley Peter Dunne</div>
+            </div>
+            <div class="content-box">
+                <h2>Your Trusted Media Partner</h2>
+                <p>Welcome to Thalainagaram Media and Advertisement, where we bring truth to light and stories to life. We are committed to delivering quality journalism and media services that matter.</p>
+                <p>Our mission is to keep the community informed, engaged, and empowered through honest and impactful reporting.</p>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about">
+            <h1>About TNMA</h1>
+            <div class="content-box">
+                <h2>Our Story</h2>
+                <p>TNMA (Thalainagaram Media and Advertisement) is a premier media organization operating in the heart of Los Santos. We pride ourselves on delivering accurate, timely, and compelling news coverage from the streets of San Andreas, covering everything from gang activity to business dealings and law enforcement operations.</p>
+            </div>
+            <div class="content-box">
+                <h2>Meet Our Reporters</h2>
+                <p><strong>Lead Investigative Reporter:</strong> Known for uncovering the truth behind Los Santos's most dangerous stories. Our lead reporter has connections across the criminal underworld, law enforcement, and high-society circles, always hunting for the next big story.</p>
+                <p><strong>Street Reporter:</strong> Always on the scene during the action. Our street reporter brings live updates from shootouts, gang wars, and major incidents across the city, ensuring our audience never misses a moment of the action.</p>
+                <p><strong>Crime & Law Enforcement Correspondent:</strong> Specializing in police operations, gang activity, and criminal investigations. This reporter works with sources within LSPD, DEA, and the criminal organizations to bring exclusive insights into ongoing operations.</p>
+                <p><strong>Business & Underground Scene Reporter:</strong> Dedicated to covering the business side of Los Santos - from legitimate enterprises to nightclub openings, black market dealings, and VIP activities. They connect with everyone from CEOs to crime lords.</p>
+            </div>
+            <div class="content-box">
+                <h2>Our Commitment</h2>
+                <p>In the GTA 5 FiveM roleplay environment, we maintain journalistic standards while covering the most dangerous city in San Andreas. We provide unbiased coverage of all perspectives - from law enforcement to criminals, from the wealthy to the street hustlers. We believe in reporting the truth, no matter how dangerous it is.</p>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services">
+            <h1>Our Services</h1>
+            <div id="services-main">
+                <div class="services-grid">
+                    <div class="service-card" onclick="showServiceDetail('news')">
+                        <h3>📰 News Reporting</h3>
+                        <p>Comprehensive reporting on events across Thalainagaram. From breaking news to in-depth investigations, we keep you informed.</p>
+                        <span class="click-more">Click to learn more</span>
+                    </div>
+                    <div class="service-card" onclick="showServiceDetail('ad')">
+                        <h3>📢 Advertising</h3>
+                        <p>Strategic advertising solutions to help businesses reach their target audience across multiple platforms.</p>
+                        <span class="click-more">Click to learn more</span>
+                    </div>
+                    <div class="service-card" onclick="showServiceDetail('events')">
+                        <h3>🎪 Event Coverage</h3>
+                        <p>Professional coverage of community events, conferences, and gatherings. We provide comprehensive documentation and live reporting.</p>
+                        <span class="click-more">Click to learn more</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service Details -->
+            <div id="service-detail" style="display: none;">
+                <button class="back-btn" onclick="backToServices()">← Back to Services</button>
+                <div id="detail-content"></div>
+            </div>
+        </section>
+
+        <!-- Job Portal Section -->
+        <section id="jobs">
+            <h1>Career Opportunities</h1>
+            <div class="content-box">
+                <h2>Join Our Team</h2>
+                <p>Are you passionate about journalism and storytelling? TNMA is always looking for talented individuals to join our growing team in the TNRP community.</p>
+            </div>
+
+            <div style="text-align: center; margin-top: 60px;">
+                <button class="apply-btn" onclick="applyJob()">Apply Now</button>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
