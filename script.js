@@ -140,8 +140,8 @@ function showServiceDetail(service) {
                     <h2>📢 Advertisement Solutions</h2>
                     <img src="https://images.unsplash.com/photo-1533750349088-cd871a92f312?w=600&h=300&fit=crop" alt="Advertisement" class="detail-image">
                     
-                    <h3>Promote Your Business in Los Santos</h3>
-                    <p>Want to reach the streets of Los Santos? TNMA's advertising solutions help businesses, criminal organizations, and entrepreneurs get their message in front of the right audience across Thalainagaram and beyond.</p>
+                    <h3>Promote Your Business in Thalainagaram</h3>
+                    <p>Want to reach the streets of Thalainagaram? TNMA's advertising solutions help businesses, criminal organizations, and entrepreneurs get their message in front of the right audience across Thalainagaram and beyond.</p>
                     
                     <h3>Advertising Options:</h3>
                     <ul>
@@ -154,11 +154,11 @@ function showServiceDetail(service) {
                     </ul>
                     
                     <h3>Reach Your Audience</h3>
-                    <p>Whether you're running a nightclub, selling weapons, operating a business front, or promoting legitimate enterprises, TNMA has the perfect advertising package for you. Our reach extends across the entire criminal and business networks of Los Santos.</p>
+                    <p>Whether you're running a nightclub, selling weapons, operating a business front, or promoting legitimate enterprises, TNMA has the perfect advertising package for you. Our reach extends across the entire criminal and business networks of Thalainagaram.</p>
                     
                     <p><strong>Success Stories:</strong> We've helped numerous businesses and organizations establish their brand presence and increase customer engagement in the city.</p>
                     
-                    <p style="color: #00ffff; font-size: 20px; margin-top: 30px;"><em>"Make your mark on Los Santos. Advertise with TNMA."</em></p>
+                    <p style="color: #00ffff; font-size: 20px; margin-top: 30px;"><em>"Make your mark on Thalainagaram. Advertise with TNMA."</em></p>
                 </div>
             `
         },
