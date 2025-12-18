@@ -548,6 +548,178 @@ h1 {
     box-shadow: 0 0 20px rgba(255, 0, 255, 0.4);
 }
 
+/* Team Profile Cards */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin: 30px 0;
+}
+
+.team-card {
+    background: linear-gradient(135deg, rgba(0, 255, 255, 0.03), rgba(255, 0, 255, 0.03));
+    border: 2px solid #00ffff;
+    border-radius: 20px;
+    padding: 30px 20px;
+    text-align: center;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.15);
+}
+
+.team-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(0, 255, 255, 0.1),
+        transparent
+    );
+    transform: rotate(45deg);
+    transition: all 0.5s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+    border-color: #ff00ff;
+    box-shadow: 0 0 25px rgba(255, 0, 255, 0.3), 0 0 40px rgba(0, 255, 255, 0.15);
+}
+
+.team-card:hover::before {
+    top: 100%;
+    left: 100%;
+}
+
+.team-avatar {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    border: 3px solid #00ffff;
+    padding: 5px;
+    background: linear-gradient(135deg, rgba(0, 255, 255, 0.1), rgba(255, 0, 255, 0.1));
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.team-card:hover .team-avatar {
+    border-color: #ff00ff;
+    box-shadow: 0 0 25px rgba(255, 0, 255, 0.5);
+    transform: scale(1.05);
+}
+
+.avatar-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.team-name {
+    color: #00ffff;
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.4);
+    position: relative;
+    z-index: 1;
+}
+
+.team-role {
+    color: #ff00ff;
+    font-size: 16px;
+    margin-bottom: 15px;
+    font-style: italic;
+    position: relative;
+    z-index: 1;
+}
+
+.discord-tag {
+    background: rgba(88, 101, 242, 0.2);
+    border: 2px solid #5865F2;
+    border-radius: 25px;
+    padding: 10px 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.team-card:hover .discord-tag {
+    background: rgba(88, 101, 242, 0.3);
+    box-shadow: 0 0 15px rgba(88, 101, 242, 0.4);
+    transform: scale(1.05);
+}
+
+.discord-icon {
+    font-size: 20px;
+}
+
+.discord-username {
+    color: #00ffff;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.team-note {
+    text-align: center;
+    color: #00ff88;
+    font-size: 16px;
+    margin-top: 30px;
+    padding: 15px;
+    background: rgba(0, 255, 136, 0.05);
+    border-radius: 10px;
+    border: 1px solid rgba(0, 255, 136, 0.2);
+}
+
+/* Team Grid Responsive */
+@media (max-width: 480px) {
+    .team-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .team-card {
+        padding: 20px 15px;
+    }
+
+    .team-avatar {
+        width: 100px;
+        height: 100px;
+    }
+
+    .team-name {
+        font-size: 20px;
+    }
+
+    .team-role {
+        font-size: 14px;
+    }
+
+    .discord-username {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 768px) and (min-width: 481px) {
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+}
+
 /* Responsive Design */
 
 /* Mobile Phones (320px - 480px) */
@@ -890,11 +1062,200 @@ h1 {
     }
 }
 
+/* Footer Styles */
+.footer {
+    background: linear-gradient(180deg, rgba(10, 10, 10, 0.95) 0%, rgba(0, 0, 0, 1) 100%);
+    border-top: 3px solid #00ffff;
+    box-shadow: 0 -5px 20px rgba(0, 255, 255, 0.15);
+    margin-top: 80px;
+    padding: 50px 20px 20px;
+    position: relative;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(0, 255, 255, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 0, 255, 0.05) 0%, transparent 50%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+.footer-section {
+    text-align: center;
+}
+
+.footer-section h3 {
+    color: #00ffff;
+    font-size: 48px;
+    margin-bottom: 15px;
+    text-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.footer-section p {
+    color: #e0e0e0;
+    font-size: 24px;
+    line-height: 1.6;
+    margin: 15px 0;
+    font-weight: 500;
+}
+
+.footer-logo {
+    width: 300px;
+    height: 180px;
+    margin: 0 auto 20px;
+    display: block;
+    filter: drop-shadow(0 0 15px rgba(0, 255, 255, 0.6));
+    object-fit: contain;
+}
+
+.footer-tagline {
+    color: #00ff88 !important;
+    font-style: italic;
+    font-size: 30px !important;
+    margin-top: 15px !important;
+    text-shadow: 0 0 8px rgba(0, 255, 136, 0.4);
+    font-weight: 600;
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 40px auto 0;
+    padding-top: 30px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.footer-divider {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #00ffff, #ff00ff, #00ff88, transparent);
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+}
+
+.footer-bottom p {
+    color: #999;
+    font-size: 14px;
+    margin: 8px 0;
+}
+
+.footer-powered {
+    color: #e0e0e0 !important;
+    font-size: 15px !important;
+    margin: 15px 0 !important;
+    font-weight: 500;
+}
+
+.tg-media {
+    color: #00ffff;
+    font-weight: bold;
+    font-size: 16px;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+    letter-spacing: 1px;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.tg-media:hover {
+    color: #ff00ff;
+    text-shadow: 0 0 15px rgba(255, 0, 255, 0.7);
+    transform: scale(1.05);
+}
+
+.footer-rp-notice {
+    color: #00ffff !important;
+    font-size: 13px !important;
+    margin-top: 10px !important;
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.3);
+}
+
+/* Footer Responsive Design */
+
+/* Mobile Phones (320px - 480px) */
+@media (max-width: 480px) {
+    .footer {
+        padding: 30px 15px 15px;
+        margin-top: 50px;
+    }
+
+    .footer-section h3 {
+        font-size: 32px;
+    }
+
+    .footer-section p {
+        font-size: 18px;
+    }
+
+    .footer-logo {
+        width: 90px;
+        height: 90px;
+    }
+
+    .footer-bottom {
+        margin-top: 30px;
+        padding-top: 20px;
+    }
+
+    .footer-bottom p {
+        font-size: 12px;
+    }
+
+    .footer-powered {
+        font-size: 13px !important;
+    }
+
+    .tg-media {
+        font-size: 14px;
+    }
+}
+
+/* Tablets (481px - 768px) */
+@media (max-width: 768px) and (min-width: 481px) {
+    .footer {
+        padding: 40px 20px 20px;
+        margin-top: 60px;
+    }
+
+    .footer-section h3 {
+        font-size: 38px;
+    }
+
+    .footer-logo {
+        width: 100px;
+        height: 100px;
+    }
+
+    .footer-powered {
+        font-size: 14px !important;
+    }
+}
+
 /* Extra Large Desktop (1200px and above) */
 @media (min-width: 1200px) {
     nav a {
         font-size: 18px;
         padding: 10px 20px;
         letter-spacing: 2px;
+    }
+    
+    .footer {
+        padding: 60px 30px 25px;
     }
 }
