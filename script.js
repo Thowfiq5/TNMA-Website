@@ -32,7 +32,7 @@ function showSection(sectionId) {
 // Apply job function - opens Google Form in new tab
 function applyJob() {
     // Replace this URL with your actual Google Form link
-    const googleFormURL = 'https://forms.google.com/your-form-link-here';
+    const googleFormURL = 'https://forms.gle/KDoLzwYm6Fy71gjr8';
     window.open(googleFormURL, '_blank');
 }
 
