@@ -168,35 +168,40 @@ header {
     border-bottom: 2px solid #00ffff;
     box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
     z-index: 1000;
-    padding: 15px 0;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .logo {
-    position: absolute;
-    left: 20px;
-    top: 15px;
     height: 50px;
     filter: drop-shadow(0 0 5px rgba(0, 255, 255, 0.4));
+    flex-shrink: 0;
 }
 
 nav {
     display: flex;
     justify-content: center;
-    gap: 40px;
-    padding: 10px 0;
+    gap: 30px;
+    flex-wrap: wrap;
+    flex: 1;
+    padding: 10px;
 }
 
 nav a {
     color: #00ffff;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    padding: 10px 20px;
+    letter-spacing: 1px;
+    padding: 8px 15px;
     border: 2px solid transparent;
     transition: all 0.3s ease;
     position: relative;
+    white-space: nowrap;
 }
 
 nav a:hover {
@@ -548,212 +553,238 @@ h1 {
 /* Mobile Phones (320px - 480px) */
 @media (max-width: 480px) {
     header {
-        padding: 12px 0;
+        padding: 10px;
+        flex-direction: column;
+        align-items: center;
     }
 
     .logo {
-        height: 40px;
-        left: 10px;
-        top: 10px;
+        height: 35px;
+        margin-bottom: 10px;
     }
 
     nav {
-        flex-wrap: wrap;
-        gap: 8px;
-        padding: 8px;
-        justify-content: center;
+        width: 100%;
+        gap: 5px;
+        padding: 5px 0;
     }
 
     nav a {
-        font-size: 12px;
-        padding: 6px 10px;
-        letter-spacing: 1px;
+        font-size: 10px;
+        padding: 5px 8px;
+        letter-spacing: 0.5px;
     }
 
     .container {
-        margin-top: 120px;
-        padding: 20px 15px;
+        margin-top: 140px;
+        padding: 15px 10px;
+        width: 100%;
+        overflow-x: hidden;
     }
 
     h1 {
-        font-size: 24px;
+        font-size: 22px;
         margin-bottom: 20px;
+        word-wrap: break-word;
     }
 
     .quote-box {
-        padding: 20px;
-        margin: 20px 0;
+        padding: 15px;
+        margin: 15px 0;
+    }
+
+    .quote-box::before {
+        font-size: 60px;
+        top: -10px;
+        left: 10px;
     }
 
     .quote-box p {
-        font-size: 16px;
+        font-size: 14px;
+        line-height: 1.5;
     }
 
     .quote-author {
-        font-size: 14px;
-        margin-top: 15px;
+        font-size: 12px;
+        margin-top: 10px;
     }
 
     .content-box {
-        padding: 20px;
-        margin: 20px 0;
+        padding: 15px;
+        margin: 15px 0;
     }
 
     .content-box h2 {
-        font-size: 20px;
-        margin-bottom: 15px;
+        font-size: 18px;
+        margin-bottom: 12px;
     }
 
     .content-box p {
-        font-size: 14px;
+        font-size: 13px;
         line-height: 1.6;
     }
 
     .services-grid {
         grid-template-columns: 1fr;
         gap: 15px;
+        margin-top: 20px;
     }
 
     .service-card {
-        padding: 20px;
+        padding: 15px;
     }
 
     .service-card h3 {
-        font-size: 18px;
+        font-size: 16px;
+        margin-bottom: 10px;
     }
 
     .service-card p {
-        font-size: 14px;
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    .click-more {
+        font-size: 11px;
     }
 
     .detail-box {
-        padding: 20px;
-        margin: 20px 0;
+        padding: 15px;
+        margin: 15px 0;
     }
 
     .detail-box h2 {
-        font-size: 22px;
-        margin-bottom: 20px;
+        font-size: 20px;
+        margin-bottom: 15px;
+        word-wrap: break-word;
     }
 
     .detail-box h3 {
-        font-size: 18px;
+        font-size: 16px;
         margin-top: 15px;
         margin-bottom: 10px;
     }
 
     .detail-box p {
-        font-size: 14px;
+        font-size: 13px;
         line-height: 1.6;
     }
 
     .detail-box ul {
-        margin-left: 20px;
+        margin-left: 15px;
+        margin-bottom: 15px;
     }
 
     .detail-box ul li {
-        font-size: 14px;
-        line-height: 1.8;
+        font-size: 13px;
+        line-height: 1.7;
     }
 
     .detail-image {
-        max-width: 100%;
-        height: 200px;
-        margin: 20px auto;
+        width: 100%;
+        height: auto;
+        min-height: 150px;
+        max-height: 200px;
+        margin: 15px 0;
     }
 
     .back-btn {
-        padding: 10px 20px;
-        font-size: 12px;
-        margin-bottom: 20px;
+        padding: 8px 15px;
+        font-size: 11px;
+        margin-bottom: 15px;
+        width: auto;
     }
 
     .apply-btn {
-        padding: 12px 30px;
-        font-size: 14px;
+        padding: 10px 25px;
+        font-size: 13px;
+        width: auto;
     }
 
     .loading-logo {
-        width: 150px;
-        height: 150px;
+        width: 120px;
+        height: 120px;
     }
 
     .loading-content h2 {
-        font-size: 24px;
+        font-size: 20px;
+        line-height: 1.3;
     }
 
     .loading-content p {
-        font-size: 14px;
+        font-size: 12px;
     }
 
     .loading-bar {
-        width: 150px;
+        width: 140px;
     }
 
     .loading-percentage {
-        font-size: 16px;
+        font-size: 14px;
     }
 }
 
 /* Tablets (481px - 768px) */
 @media (max-width: 768px) and (min-width: 481px) {
     header {
-        padding: 15px 0;
+        padding: 12px 15px;
+        flex-direction: column;
+        align-items: center;
     }
 
     .logo {
-        height: 45px;
-        left: 15px;
-        top: 12px;
+        height: 40px;
+        margin-bottom: 10px;
     }
 
     nav {
-        flex-wrap: wrap;
-        gap: 20px;
-        padding: 10px;
+        width: 100%;
+        gap: 15px;
+        padding: 8px 0;
     }
 
     nav a {
         font-size: 13px;
-        padding: 8px 15px;
+        padding: 7px 12px;
     }
 
     .container {
-        margin-top: 100px;
-        padding: 30px 20px;
-        max-width: 100%;
+        margin-top: 130px;
+        padding: 25px 15px;
+        width: 100%;
+        overflow-x: hidden;
     }
 
     h1 {
-        font-size: 32px;
+        font-size: 30px;
         margin-bottom: 25px;
     }
 
     .quote-box {
-        padding: 30px;
-        margin: 30px 0;
-    }
-
-    .quote-box p {
-        font-size: 18px;
-    }
-
-    .quote-author {
-        font-size: 16px;
-    }
-
-    .content-box {
         padding: 25px;
         margin: 25px 0;
     }
 
+    .quote-box p {
+        font-size: 17px;
+    }
+
+    .quote-author {
+        font-size: 15px;
+    }
+
+    .content-box {
+        padding: 20px;
+        margin: 20px 0;
+    }
+
     .content-box h2 {
-        font-size: 24px;
+        font-size: 22px;
         margin-bottom: 15px;
     }
 
     .content-box p {
-        font-size: 16px;
+        font-size: 15px;
     }
 
     .services-grid {
@@ -762,29 +793,29 @@ h1 {
     }
 
     .service-card {
-        padding: 25px;
+        padding: 20px;
     }
 
     .service-card h3 {
-        font-size: 20px;
+        font-size: 19px;
     }
 
     .service-card p {
-        font-size: 15px;
+        font-size: 14px;
     }
 
     .detail-box {
-        padding: 30px;
-        margin: 25px 0;
+        padding: 25px;
+        margin: 20px 0;
     }
 
     .detail-box h2 {
-        font-size: 28px;
+        font-size: 26px;
         margin-bottom: 20px;
     }
 
     .detail-box h3 {
-        font-size: 20px;
+        font-size: 19px;
         margin-top: 20px;
     }
 
@@ -793,39 +824,42 @@ h1 {
     }
 
     .detail-image {
-        max-width: 100%;
-        height: 250px;
-        margin: 25px auto;
+        width: 100%;
+        height: auto;
+        min-height: 200px;
+        max-height: 250px;
+        margin: 20px 0;
     }
 
     .back-btn {
-        padding: 11px 25px;
-        font-size: 14px;
+        padding: 10px 22px;
+        font-size: 13px;
     }
 
     .apply-btn {
-        padding: 14px 35px;
-        font-size: 16px;
+        padding: 12px 32px;
+        font-size: 15px;
     }
 
     .loading-logo {
-        width: 180px;
-        height: 180px;
+        width: 160px;
+        height: 160px;
     }
 
     .loading-content h2 {
-        font-size: 28px;
+        font-size: 26px;
     }
 
     .loading-bar {
-        width: 180px;
+        width: 170px;
     }
 }
 
 /* Desktop (769px and above) */
 @media (min-width: 769px) {
     header {
-        padding: 15px 0;
+        padding: 15px 30px;
+        flex-direction: row;
     }
 
     .logo {
@@ -833,11 +867,12 @@ h1 {
     }
 
     nav {
-        gap: 40px;
+        gap: 35px;
     }
 
     nav a {
-        font-size: 18px;
+        font-size: 16px;
+        padding: 10px 18px;
     }
 
     .container {
@@ -852,5 +887,14 @@ h1 {
 
     .services-grid {
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+
+/* Extra Large Desktop (1200px and above) */
+@media (min-width: 1200px) {
+    nav a {
+        font-size: 18px;
+        padding: 10px 20px;
+        letter-spacing: 2px;
     }
 }
