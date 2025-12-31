@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TNMA - Advertisement Services</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="stylesheet" href="advertisement.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Landing Page -->
+        <div id="landing-page" class="landing-page">
+            <h1>TNMA Advertisement Services</h1>
+            <p class="subtitle">Choose Your Advertising Platform</p>
+            
+            <div class="ad-options">
+                <div class="option-card" onclick="showNewspaperAds()">
+                    <div class="option-icon">📰</div>
+                    <h2>Newspaper Ads</h2>
+                    <p>Advertise in Thalainagaram's premier newspaper</p>
+                    <ul>
+                        <li>Full Page, Half Page, Quarter Page</li>
+                        <li>Wide circulation reach</li>
+                        <li>Affordable pricing</li>
+                    </ul>
+                    <button class="option-btn">Get Started →</button>
+                </div>
+
+                <div class="option-card" onclick="showBillboards()">
+                    <div class="option-icon">🏙️</div>
+                    <h2>Billboard Ads</h2>
+                    <p>High-visibility outdoor advertising</p>
+                    <ul>
+                        <li>Prime city locations</li>
+                        <li>24/7 visibility</li>
+                        <li>Maximum brand exposure</li>
+                    </ul>
+                    <button class="option-btn">Get Started →</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Newspaper Ads Form -->
+        <div id="newspaper-page" class="content-page" style="display: none;">
+            <button class="back-to-home" onclick="backToHome()">← Back to Options</button>
+            
+            <h1>Newspaper Advertisement</h1>
+            <p class="subtitle">Fill the form below to place your ad</p>
+
+            <div class="ad-form">
+                <div class="form-header">
+                    <h2>📰 Newspaper Ad Application</h2>
+                    <p>Advertise in Thalainagaram Newspaper</p>
+                </div>
+
+                <div class="info-box">
+                    <h3>📋 Available Ad Sizes:</h3>
+                    <ul>
+                        <li><strong>Full Page:</strong> Maximum visibility - $2,000</li>
+                        <li><strong>Half Page:</strong> Great exposure - $1,200</li>
+                        <li><strong>Quarter Page:</strong> Perfect for small businesses - $700</li>
+                        <li><strong>Business Card Size:</strong> Budget-friendly - $300</li>
+                    </ul>
+                </div>
+
+                <form id="advertisementForm" onsubmit="submitAdvertisement(event)">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Business Name <span class="required">*</span></label>
+                            <input type="text" id="businessName" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Contact Person <span class="required">*</span></label>
+                            <input type="text" id="contactPerson" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Email <span class="required">*</span></label>
+                            <input type="email" id="adEmail" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone Number <span class="required">*</span></label>
+                            <input type="tel" id="adPhone" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Business Type <span class="required">*</span></label>
+                        <select id="businessType" required>
+                            <option value="">Select Type</option>
+                            <option value="Restaurant/Food">Restaurant/Food</option>
+                            <option value="Retail/Shopping">Retail/Shopping</option>
+                            <option value="Automotive">Automotive</option>
+                            <option value="Real Estate">Real Estate</option>
+                            <option value="Entertainment">Entertainment</option>
+                            <option value="Healthcare">Healthcare</option>
+                            <option value="Legal Services">Legal Services</option>
+                            <option value="Technology">Technology</option>
+                            <option value="Finance">Finance</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Advertisement Size <span class="required">*</span></label>
+                        <select id="adSize" required>
+                            <option value="">Select Size</option>
+                            <option value="Full Page - $2,000">Full Page - $2,000</option>
+                            <option value="Half Page - $1,200">Half Page - $1,200</option>
+                            <option value="Quarter Page - $700">Quarter Page - $700</option>
+                            <option value="Business Card - $300">Business Card - $300</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Duration <span class="required">*</span></label>
+                        <select id="duration" required>
+                            <option value="">Select Duration</option>
+                            <option value="1 Issue">1 Issue</option>
+                            <option value="1 Week (2 Issues)">1 Week (2 Issues)</option>
+                            <option value="2 Weeks (4 Issues)">2 Weeks (4 Issues)</option>
+                            <option value="1 Month">1 Month</option>
+                            <option value="3 Months">3 Months</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Ad Content/Message <span class="required">*</span></label>
+                        <textarea id="adContent" placeholder="Enter your advertisement message, tagline, or details..." required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Upload Ad Design/Logo (Optional)</label>
+                        <div class="file-upload-area" onclick="document.getElementById('adImage').click()">
+                            <div class="upload-icon">📤</div>
+                            <p style="color: #ff00ff;">Click to upload your ad design or logo</p>
+                            <p style="color: #999; font-size: 12px; margin-top: 5px;">JPG, PNG (Max 5MB)</p>
+                            <input type="file" id="adImage" accept="image/*" onchange="handleFileUpload(event)">
+                            <div id="filePreview" class="file-preview">
+                                <img id="previewImage" src="" alt="Preview">
+                                <p class="file-name" id="fileName"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Additional Notes</label>
+                        <textarea id="adNotes" placeholder="Special requests, preferred colors, placement preferences..."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn" id="submitBtn">Submit Application</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Billboard Ads Page -->
+        <div id="billboard-page" class="content-page" style="display: none;">
+            <button class="back-to-home" onclick="backToHome()">← Back to Options</button>
+            
+            <h1>Billboard Advertisement</h1>
+            <p class="subtitle">Premium outdoor advertising across Thalainagaram</p>
+
+            <div class="coming-soon">
+                <div class="coming-soon-icon">🚧</div>
+                <h2>Coming Soon!</h2>
+                <p>Billboard advertising will be available soon. We're working on bringing you the best outdoor advertising locations in Thalainagaram.</p>
+                
+                <p style="margin-top: 40px; color: #00ffff; font-size: 20px; font-weight: bold;">For inquiries, please contact:</p>
+                
+                <div class="team-contacts">
+                    <a href="https://discord.com/users/841693897183723550" target="_blank" class="team-contact-card">
+                        <div class="team-avatar-wrapper">
+                            <img src="https://cdn.discordapp.com/avatars/841693897183723550/aed16922d8dbc68fe240aacbd951e941.webp?size=128" alt="Thowfiq" class="team-avatar-img">
+                        </div>
+                        <h3 class="team-member-name">Thowfiq</h3>
+                        <p class="team-member-username">@thowfiq</p>
+                    </a>
+
+                    <a href="https://discord.com/users/984334120631033886" target="_blank" class="team-contact-card">
+                        <div class="team-avatar-wrapper">
+                            <img src="https://cdn.discordapp.com/avatars/984334120631033886/6ba538f93ff8b4263456641990562e94.webp?size=128" alt="David" class="team-avatar-img">
+                        </div>
+                        <h3 class="team-member-name">David</h3>
+                        <p class="team-member-username">@abishek7975</p>
+                    </a>
+                </div>
+
+                <button class="option-btn" onclick="backToHome()" style="margin-top: 40px;">← Back to Options</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="advertisement.js"></script>
+</body>
+</html>
