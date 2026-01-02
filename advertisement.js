@@ -1,5 +1,5 @@
 // Discord Webhook URL
-const DISCORD_WEBHOOK_URL = 'https://discord.com/api/webhooks/1451206880314523701/SxfOz-Tvfsns7_5JoNGv2AJdoBnEHmaE1sDu2estrLExuGYC9zE9VNWZrYHZQrEXJEl3';
+const DISCORD_WEBHOOK_URL = 'https://discord.com/api/webhooks/1456613398044344463/OVomRV3lZHDi6T_yg3qOJj4FMx755Miprb7SZsqTQmWob2nyXn32AuDjOe4Dcnjiblyi';
 
 let uploadedImageFile = null;
 
@@ -120,7 +120,7 @@ async function sendToDiscord(app) {
     const currentYear = new Date().getFullYear();
 
     const embed = {
-        title: "📰 New Newspaper Advertisement Application",
+        title: "🔔 New Newspaper Advertisement Application",
         description: "A new business wants to advertise in TNMA Newspaper!",
         color: 65535,
         fields: [
@@ -159,8 +159,8 @@ async function sendToDiscord(app) {
         const formData = new FormData();
 
         const payload = {
-            content: "<@&1106295758929534998> 🔔 New advertisement application received!",
-            username: "TNMA Newspaper",
+            content: "<@&1455460565173407825>",
+            username: "TNMA Advertisement",
             embeds: [embed]
         };
 
