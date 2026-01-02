@@ -67,8 +67,13 @@ async function submitAdvertisement(e) {
     submitBtn.disabled = true;
     submitBtn.textContent = '⏳ Uploading...';
 
+    // Generate Application ID (Sequential)
+    let currentAppId = parseInt(localStorage.getItem('tnma_app_count') || '0');
+    let newAppId = currentAppId + 1;
+    localStorage.setItem('tnma_app_count', newAppId.toString());
+
     const application = {
-        id: 'AD-' + Date.now(),
+        id: '#' + newAppId,
         type: 'Newspaper',
         inGameName: document.getElementById('inGameName').value,
         inGamePhone: document.getElementById('inGamePhone').value,
@@ -88,7 +93,7 @@ async function submitAdvertisement(e) {
     const discordSent = await sendToDiscordWithTimeout(application, 30000); // 30 second timeout
 
     if (discordSent) {
-        showMessage('success', '✅ Application submitted successfully! We will contact you within 24 hours.');
+        showMessage('success', `✅ Application ${application.id} submitted successfully! We will contact you within 24 hours.`);
     } else {
         showMessage('error', '⚠️ Submission may have failed. Please contact us directly or try again.');
     }
